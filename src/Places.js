@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-
+  
+import React from 'react';
+import Places from './Places';
 const Places = () => {
   return <h2>Places component</h2>;
 };
