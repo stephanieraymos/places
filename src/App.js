@@ -14,9 +14,16 @@ function App() {
 
   const fetchPlaces = async () => {
     setLoading(true) //make sure loading is set to true just incase
-    const response = await fetch(url);
-    const places = await response.json();
-    console.log(places)
+
+    try {
+      const response = await fetch(url);
+      const places = await response.json();
+      setLoading(false);
+      setPlaces(places);
+    } catch (error) {
+      setLoading(false);
+      console.log(error)
+    }
   }
 
   useEffect(() => {
