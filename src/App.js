@@ -3,8 +3,8 @@ import Loading from './Loading'
 import Places from './Places'
 import Data from './places-data'
 
-// const url = 'https://google.com/images'
 const url = { Data }
+
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -15,12 +15,13 @@ function App() {
       <main>
         < Loading />
       </main>
-    )
+    );
   }
-  return
-  <>
-
-  </>
+  return (
+    <main>
+      <Places />
+    </main>
+  );
 }
 
 export default App
