@@ -12,6 +12,11 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [places, setPlaces] = useState([]);
 
+  const removePlace = (id) => {
+    const newPlaces = places.filter((place) => place.id !== id);
+    setPlaces(newPlaces);
+  }
+
   const fetchPlaces = async () => {
     setLoading(true) //make sure loading is set to true just incase
 
@@ -37,9 +42,21 @@ function App() {
       </main>
     );
   }
+
+  if (places.length === 0) {
+    return <main>
+      <div className="title">
+        <h2>No places left</h2>
+        <button className="btn" onClick={fetchPlaces}>
+          Refresh all places
+        </button>
+      </div>
+    </main>
+  }
+
   return (
     <main>
-      <Places places={places} />
+      <Places places={places} removePlace={removePlace} />
     </main>
   );
 }

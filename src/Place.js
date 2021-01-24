@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Place = ({ id, image, info, price, name }) => {
+const Place = ({ id, image, info, price, name, removePlace }) => {
 
   const [readMore, setReadMore] = useState(false);
 
@@ -18,7 +18,7 @@ const Place = ({ id, image, info, price, name }) => {
           {readMore ? 'show less' : 'read more'}
         </button>
       </p>
-      <button className="delete-btn">Delete</button>
+      <button className="delete-btn" onClick={() => removePlace(id)}>Delete</button>
     </footer>
   </article>;
 };
