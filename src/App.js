@@ -39,7 +39,7 @@ function App() {
   }
   return (
     <main>
-      <Places />
+      <Places places={places} />
     </main>
   );
 }
